@@ -8,6 +8,7 @@ type StoreItemProps = {
     price: number
     imgUrl: string
 }
+
 export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
     const {
         getItemQuantity,
@@ -19,15 +20,13 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
     const quantity = getItemQuantity(id)
 
     return (
-        <>
-            <Card className="h-100">
-                <Card.Img 
-                    variant="top" 
-                    src={imgUrl} 
-                    height="200px" 
-                    style={{ objectFit: "cover" }}
-                />
-            </Card>
+        <Card className="h-100">
+            <Card.Img 
+                variant="top" 
+                src={imgUrl} 
+                height="200px" 
+                style={{ objectFit: "cover" }}
+            />
             <Card.Body className="d-flex flex-column">
                 <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
                     <span className="fs-2">{name}</span>
@@ -56,6 +55,6 @@ export function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
                         </div>}
                 </div>
             </Card.Body>
-        </>
+        </Card>
     ) 
 }
